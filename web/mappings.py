@@ -1,23 +1,23 @@
-arr1 = [2, 3, 4, 5, 6, 7, 8, 9, 'C', 'F', 'G', 'H', 'J', 'M', 'P', 'Q', 'R', 'V', 'W', 'X']
-arr2 = [2, 3, 4, 5, 6, 7, 8, 9, 'C', 'F', 'G', 'H', 'J', 'M', 'P', 'Q', 'R', 'V', 'W', 'X']
-arr3 = []
-
-my_file = open('../words.txt', 'r')
-lines = my_file.readlines()
-for line in lines:
-    arr3.append("'" + line.strip() + "'")
-
-i = 0
-j = 0
-k = 0
-
-while i < len(arr1):
-    while j < len(arr2):
-        print("'" + str(arr1[i]) + str(arr2[j]) + "'" + ": " + arr3[k] + ',')
-        j += 1
-        k += 1
-    i += 1
-    j = 0
+# arr1 = [2, 3, 4, 5, 6, 7, 8, 9, 'C', 'F', 'G', 'H', 'J', 'M', 'P', 'Q', 'R', 'V', 'W', 'X']
+# arr2 = [2, 3, 4, 5, 6, 7, 8, 9, 'C', 'F', 'G', 'H', 'J', 'M', 'P', 'Q', 'R', 'V', 'W', 'X']
+# arr3 = []
+#
+# my_file = open('../words.txt', 'r')
+# lines = my_file.readlines()
+# for line in lines:
+#     arr3.append("'" + line.strip() + "'")
+#
+# i = 0
+# j = 0
+# k = 0
+#
+# while i < len(arr1):
+#     while j < len(arr2):
+#         print("'" + str(arr1[i]) + str(arr2[j]) + "'" + ": " + arr3[k] + ',')
+#         j += 1
+#         k += 1
+#     i += 1
+#     j = 0
 
 map = {
     '22': 'find',
