@@ -3,7 +3,6 @@ from functools import reduce
 
 import typer
 
-sys.path.append('../')
 from web.mappings import map
 
 
