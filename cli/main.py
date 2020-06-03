@@ -1,5 +1,6 @@
 import typer
 
+
 import helper
 
 
@@ -16,8 +17,8 @@ def get_word(char_code: str):
 def get_phrase(code: str):
     try:
         if len(code) != 12:
-            error = typer.style("Incorrect OLC length. Format: 6PH57VP3+PR6", fg=typer.colors.RED)
-            typer.echo(error)
+            error = "Incorrect OLC length. Format: 6PH57VP3+PR6"
+            typer.echo(typer.style(error, fg=typer.colors.RED))
             return
         phrase = helper.olc_to_phrase(code)
         typer.echo(f"{phrase}")
