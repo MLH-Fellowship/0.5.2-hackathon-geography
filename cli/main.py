@@ -15,8 +15,8 @@ def get_word(char_code: str):
 @app.command()
 def get_phrase(code: str):
     try:
-        if len(code) % 2 != 0:
-            error = typer.style("Uneven OLC.", fg=typer.colors.RED)
+        if len(code) < 8 != 0:
+            error = typer.style("OLC is too short.", fg=typer.colors.RED)
             typer.echo(error)
             return
         # Split string into array of 2 char elements.
