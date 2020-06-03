@@ -1,7 +1,6 @@
 import typer
 
-
-import helper
+from helper import olc_to_phrase, two_to_word
 
 
 app = typer.Typer()
@@ -9,7 +8,7 @@ app = typer.Typer()
 
 @app.command()
 def get_word(char_code: str):
-    word = helper.two_to_word(char_code)
+    word = two_to_word(char_code)
     typer.echo(f"{word}")
 
 
@@ -20,7 +19,7 @@ def get_phrase(code: str):
             error = "Incorrect OLC length. Format: 6PH57VP3+PR6"
             typer.echo(typer.style(error, fg=typer.colors.RED))
             return
-        phrase = helper.olc_to_phrase(code)
+        phrase = olc_to_phrase(code)
         typer.echo(f"{phrase}")
     except KeyError:
         error = typer.style("Not a valid OLC.", fg=typer.colors.RED)
