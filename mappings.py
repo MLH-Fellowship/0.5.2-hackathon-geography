@@ -1,5 +1,5 @@
-# plus_codes_list = [2, 3, 4, 5, 6, 7, 8, 9, 'C', 'F', 'G', 'H', 'J', 'M', 'P', 'Q', 'R',
-#                    'V', 'W', 'X']
+# plus_codes_list = [2, 3, 4, 5, 6, 7, 8, 9, 'C', 'F', 'G', 'H', 'J', 'M', 'P',
+#                    'Q', 'R', 'V', 'W', 'X']
 # words_list = []
 #
 # words_file = open('../words.txt', 'r')
@@ -13,7 +13,8 @@
 #
 # while i < len(plus_codes_list):
 #     while j < len(plus_codes_list):
-#         print("'" + str(plus_codes_list[i]) + str(plus_codes_list[j]) + "'" + ": " + words_list[k] + ',')
+#         print("'" + str(plus_codes_list[i]) + str(plus_codes_list[j]) + "'" +
+#               ": " + words_list[k] + ',')
 #         j += 1
 #         k += 1
 #     i += 1
