@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, render_template, url_for
 app = Flask(__name__)
 
 
@@ -10,4 +10,3 @@ def index():
 @app.route('/anything')
 def default():
     return redirect(url_for('index'))
-
