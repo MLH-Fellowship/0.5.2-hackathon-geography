@@ -23,15 +23,8 @@ def single_char_phrase(olc: str):
 def double_char_phrase(olc: str):
     char_arr = []
     code = olc.replace('+', '')
-    if len(code) % 2 == 0:
-        # Split string into array of 2 char elements.
-        char_arr = [code[i: i+2] for i in range(0, len(code), 2)]
-    else:
-        end_char = code[-1]
-        # Split string into array of 2 char elements.
-        char_arr = [code[i: i+2] for i in range(0, len(code) - 1, 2)]
-        # Add last single character.
-        char_arr.append(end_char)
+    # Split string into array of 2 char elements.
+    char_arr = [code[i: i+2] for i in range(0, len(code), 2)]
     # Convert coded array to word phrase.
     return reduce(lambda acc, s: acc + sep + get_word(s), char_arr, '')[1:]
 
