@@ -1,8 +1,6 @@
-from functools import reduce
-
 import typer
 
-from web.mappings import map
+from whereamigeo import helper
 
 
 app = typer.Typer()
@@ -10,24 +8,43 @@ app = typer.Typer()
 
 @app.command()
 def get_word(char_code: str):
-    word = map[char_code]
+    word = helper.get_word(char_code)
     typer.echo(f"{word}")
 
 
 @app.command()
-def get_phrase(code: str):
+def get_code(word: str):
+    code = helper.get_code(word)
+    typer.echo(f"{code}")
+
+
+@app.command()
+def get_phrase(olc: str, single: bool = False):
     try:
-        if len(code) < 8:
-            error = typer.style("OLC is too short.", fg=typer.colors.RED)
-            typer.echo(error)
-            return
-        # Split string into array of 2 char elements.
-        char_arr = [code[i: i+2] for i in range(0, len(code), 2)]
-        # Convert coded array to word phrase.
-        phrase = reduce(lambda acc, x: acc + "." + map[x], char_arr, "")[1:]
+        phrase = helper.olc_to_phrase(olc, single)
         typer.echo(f"{phrase}")
     except KeyError:
-        error = typer.style("Not a valid OLC.", fg=typer.colors.RED)
+        error = typer.style("Not a valid plus code.", fg=typer.colors.RED)
+        typer.echo(error)
+
+
+@app.command()
+def get_single_phrase(olc: str):
+    get_phrase(olc, True)
+
+
+@app.command()
+def get_double_phrase(olc: str):
+    get_phrase(olc, False)
+
+
+@app.command()
+def get_plus_code(phrase: str):
+    try:
+        olc = helper.phrase_to_olc(phrase)
+        typer.echo(f"{olc}")
+    except KeyError:
+        error = typer.style("Plus code not found.", fg=typer.colors.RED)
         typer.echo(error)
 
 
