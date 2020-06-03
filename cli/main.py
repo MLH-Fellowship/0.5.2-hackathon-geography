@@ -4,7 +4,7 @@ from functools import reduce
 import typer
 
 sys.path.append('../')
-from web.mappings import map 
+from web.mappings import map
 
 
 app = typer.Typer()
@@ -19,7 +19,7 @@ def get_word(char_code: str):
 @app.command()
 def get_phrase(code: str):
     try:
-        if len(code) < 8 != 0:
+        if len(code) < 8:
             error = typer.style("OLC is too short.", fg=typer.colors.RED)
             typer.echo(error)
             return
