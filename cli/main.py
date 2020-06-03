@@ -32,5 +32,6 @@ def get_phrase(code: str):
         error = typer.style("Not a valid OLC.", fg=typer.colors.RED)
         typer.echo(error)
 
+
 if __name__ == "__main__":
     app()
