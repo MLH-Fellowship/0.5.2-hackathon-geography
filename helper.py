@@ -14,17 +14,19 @@ def get_code(word: str):
     return word_to_plus_code_mapping[word]
 
 
-def single_char_phrase(olc: str):
+def get_olc_array(olc: str, inc: int):
     code = olc.replace('+', '')
-    char_arr = [code[i: i+1] for i in range(0, len(code))]
+    return [code[i: i+inc] for i in range(0, len(code), inc)]
+
+
+def single_char_phrase(olc: str):
+    char_arr = get_olc_array(olc, 1)
     return reduce(lambda acc, s: acc + sep + get_word(s), char_arr, '')[1:]
 
 
 def double_char_phrase(olc: str):
-    char_arr = []
-    code = olc.replace('+', '')
     # Split string into array of 2 char elements.
-    char_arr = [code[i: i+2] for i in range(0, len(code), 2)]
+    char_arr = get_olc_array(olc, 2)
     # Convert coded array to word phrase.
     return reduce(lambda acc, s: acc + sep + get_word(s), char_arr, '')[1:]
 
