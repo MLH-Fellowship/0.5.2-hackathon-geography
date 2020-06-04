@@ -1,5 +1,5 @@
 from whereamigeo.helper import olc_to_phrase, phrase_to_olc
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, status
 
 app = FastAPI()
 
@@ -10,12 +10,20 @@ def read_root():
 
 
 @app.get("/lookup_olc")
-def lookup_olc(olc: str = None):
+def lookup_olc(response: Response, olc: str = None):
     # the '+' gets replaced with ' ' for some reason, we need to add it back
     olc = olc.replace(' ', '+')
-    return {"phrase": olc_to_phrase(olc, False)}
+    try:
+        return {"status": 200, "phrase": olc_to_phrase(olc, False)}
+    except KeyError:
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return {"status": 400, "message": "Invalid OLC code."}
 
 
 @app.get("/lookup_phrase")
-def lookup_phrase(phrase: str = None):
-    return {"olc": phrase_to_olc(phrase)}
+def lookup_phrase(response: Response, phrase: str = None):
+    try:
+        return {"status": 200, "olc": phrase_to_olc(phrase)}
+    except KeyError:
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return {"status": 400, "message": "Invalid phrase."}
