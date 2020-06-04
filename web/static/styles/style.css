@@ -1,4 +1,28 @@
-.nav-item {
+.subheader {
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    margin: 8px 24px 8px 24px;
+}
+
+.header {
+    font-family: 'Abel', sans-serif;
+    font-size: 36px;
+    margin: 16px 24px 16px 24px;
+}
+
+.caption {
+    font-family: 'Abel', sans-serif;
+    font-size: 24px;
+}
+
+.title {
+    font-family: 'Abel', sans-serif;
+    font-size: 48px;
+    text-align: center;
+}
+
+
+/* .nav-item {
   border-bottom: 1.5px solid #000;
   border-radius: 0 !important;
 }
@@ -182,4 +206,4 @@ strong {
   position: fixed;
   display: block;
   height: 100vh;
-}
+} */
