@@ -21,11 +21,11 @@
 </head>
 
 <body style="background-color: #E5E5E5;">
-    <div id="landing" style="height:100%; width: 100%; background-color: #E5E5E5; padding: 0px 10% 0px 10%; align-items: center; display: flex; justify-content: center; "></div>
-    <div style="height:1px; width: 100%; background-color: #324749;"></div>
+    <div id="landing" style="height:100%; width: 100%; background-color: #E5E5E5; padding: 0px 10% 0px 10%; align-items: center; display: flex; justify-content: center;"></div>
+    <div style="height:1px; width: 100%; background-color: #5F7679;"></div>
     <div id="whereamidiv" style="align-items: center; display: flex; justify-content: center; height:100%; width:100%">
         <div id="mapdiv" style="height:100%; width:100%; background-color: #E5E5E5;"></div>
-        <div id="sidebar" style="height:100%; width:428px; background-color: #E5E5E5;"></div>
+        <div id="sidebar" style="height:100%; width:428px; background-color: #E5E5E5; padding: 48px 0px 48px 0px"></div>
     </div>
     <script>
         // Setup variables.
@@ -98,8 +98,9 @@
             .html(introHTML)
 
         let landingButton = landing.append("div")
-            .style("text-align", "right")
             .attr("class", "subheader")
+            .style("text-align", "right")
+            .append("a")
             .style("color", color.ink)
             .style("text-decoration", "none")
             .style("transition", ".3s ease")
@@ -114,15 +115,6 @@
                     scrollTop: $("#whereamidiv").offset().top
                 }, 'slow');
             })
-
-
-        // Setup "where am i?" header.
-        sidebar.append("div")
-            .attr("class", "title")
-            .style("width", width - padding.horizontal * 2)
-            .style("color", color.ink)
-            .style("padding", "48px 0px 64px 0px")
-            .text("where am i?")
 
         // Setup Google map input.
         sidebar.append("input")
@@ -159,6 +151,7 @@
             .attr("rx", searchBySwitchAttr.width / 2)
             .attr("x", searchBySwitchAttr.x)
             .attr("y", searchBySwitchAttr.y)
+            .style("cursor", "pointer")
             .on("mousedown", function() {
                 toggleSearchBySwitch()
             })
@@ -170,6 +163,7 @@
             .attr("rx", (searchBySwitchAttr.width - searchBySwitchAttr.padding) / 2)
             .attr("x", searchBySwitchAttr.x + searchBySwitchAttr.padding)
             .attr("y", searchBySwitchAttr.y + searchBySwitchAttr.padding)
+            .style("cursor", "pointer")
             .on("mousedown", function() {
                 toggleSearchBySwitch()
             })
