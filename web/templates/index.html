@@ -83,10 +83,12 @@
             .style("color", color.ink)
             .text("where am i?")
 
-        let introHTML = `
-          Translate your <a href="https://en.wikipedia.org/wiki/Open_Location_Code" style="color: #324749;"> 
-          open location code (OLC) </a> to a word phrase that can be easily remembered.
-        `
+        // let introHTML = `
+        //   Translate your <a href="https://en.wikipedia.org/wiki/Open_Location_Code" style="color: #324749;"> 
+        //   open location code (OLC) </a> to a word phrase that can be easily remembered.
+        // `
+
+        let introHTML = "Translate your location to a word phrase that can be easily remembered."
 
         landing.append("div")
             .attr("class", "subheader")
