@@ -53,17 +53,12 @@ This should start Flask. You can then view the website at localhost:5000!
 
 ### CLI (3/5)
 Make sure you've completed the general setup before starting this!
-
-1. `cd` into the `cli` directory. This is where the files for the CLI live.
-
-        $ cd cli
     
-    
-2. For development, run the CLI as a package by using the `-m` flag when executing `python`. You'll first need to `cd` out of the `cli` directory. 
+1. Run the CLI as a package by using the `-m` flag when executing `python`. You'll first need to `cd` out of the `cli` directory. 
 
         $ cd ..
         
-    Then, run the CLI package using Python.
+2. Then, run the CLI package using Python.
     
         $ python -m cli.main <args>
 
@@ -72,10 +67,10 @@ If you've done the general setup, then this should be setup properly.
 
 Keep in mind, every time you make a change to the files under `whereamigeo/`, you'll need to reinstall the package for the changes to take place.
         
-       $ cd whereamigeo
-       $ pip install .
+        $ cd whereamigeo
+        $ pip install .
         
 ### Discord bot (5/5)
 On line 27, replace the `INSERT-TOKEN-HERE` with your Discord token. Run the command and it'll start up!
 
-       $ python bot.py
+        $ python bot.py
