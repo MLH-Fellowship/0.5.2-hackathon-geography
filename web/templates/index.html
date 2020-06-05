@@ -314,6 +314,9 @@
                     fetch(`${baseUrl}/lookup_olc?olc=${document.getElementById("olc").value}`)
                         .then(res => res.json())
                         .then(json => {
+                            if(json.status == 400) {
+                                throw "Uh oh!";
+                            }
                             updatePlusCode(document.getElementById("olc").value)
                             updateWordPhrase(json.phrase)
                         })
@@ -329,6 +332,10 @@
                     fetch(`${baseUrl}/lookup_phrase?phrase=${document.getElementById("olc").value}`)
                         .then(res => res.json())
                         .then(json => {
+                            console.log("json", json);
+                            if(json.status == 400) {
+                                throw "Uh oh!";
+                            }
                             updatePlusCode(json.olc)
                             updateWordPhrase(document.getElementById("olc").value)
                         })
