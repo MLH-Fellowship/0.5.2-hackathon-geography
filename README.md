@@ -65,12 +65,14 @@ Make sure you've completed the general setup before starting this!
 ### whereamigeo (4/5)
 If you've done the general setup, then this should be setup properly. 
 
-Keep in mind, every time you make a change to the files under `whereamigeo/`, you'll need to reinstall the package for the changes to take place.
+1. Keep in mind, every time you make a change to the files under `whereamigeo/`, you'll need to reinstall the package for the changes to take place.
         
         $ cd whereamigeo
         $ pip install .
         
 ### Discord bot (5/5)
-On line 27, replace the `INSERT-TOKEN-HERE` with your Discord token. Run the command and it'll start up!
+Not much setup is needed for the Discord functionality to work - as long as you ran the requirements.txt file earlier, you'll have the dependencies needed.
+
+1. On line 27, replace the `INSERT-TOKEN-HERE` with your Discord token. Run the command and it'll start up!
 
         $ python bot.py
