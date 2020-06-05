@@ -4,7 +4,11 @@
 # Where Am I?
 
 ## Motivation
-Communicating your location can be hard, and can only be so accurate. Longitude and latitude can be used to relay ones location to a tee, but remembering exact longtitude and latitude values is hard enough, and to pass them to someone else would prove to be even harder. The [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) system is a geocode system that can also be used to identify an area *anywhere on earth*. This system provides codes that can narrow a location down to 3.5m by 3.5m distances. However, one pitfall to this system is the hard to remember strings - for example, **849VCWC8+R9**. *Where Am I* aims to solve this problem by converting the strings into a memorable four-to-five word phrase.
+Communicating your location can be hard, and can only be so accurate. Longitude and latitude can be used to relay ones location to a tee, but remembering exact longtitude and latitude values is hard enough, and to pass them to someone else would prove to be even harder.  
+  
+The [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) system is a geocode system that can also be used to identify an area *anywhere on earth*. This system provides codes that can narrow a location down to 3.5m by 3.5m distances. However, one pitfall to this system is the hard to remember strings - for example, **849VCWC8+R9**.  
+  
+*Where Am I* aims to solve this problem by converting the strings into a memorable four-to-five word phrase.
 
 tl;dr - need to relay your location? ~~longitude and latitude~~, ~~Open Location Code~~, Where Am I :heavy_check_mark:
 
